@@ -18,17 +18,18 @@ if (playerSpan.innerText === 'X') {
 
 console.log(board);
 
-let topLeft = board[0] ;
-let topCenter = board[1] ;
-let topRight = board [2] ; 
-let middleLeft = board [3] ; 
-let middleCenter = board [4] ; 
-let middleRight = board [5] ; 
-let bottomLeft = board [6] ; 
-let bottomCenter = board [7] ; 
-let bottomRight = board [8] ; 
 
-if (topLeft !== undefined && topLeft === topMiddle && topLeft === topRight) {
+const topLeft = board[0] ;
+const topCenter = board[1] ;
+const topRight = board[2] ;
+const middleLeft = board[3] ;
+const middleCenter = board[4] ;
+const middleRight = board[5] ;
+const bottomLeft = board[6] ;
+const bottomCenter = board[7] ;
+const bottomRight = board[8] ;
+
+if (topLeft !== undefined && topLeft === topCenter && topLeft === topRight) {
     alert('winner!!!');
     return;
 }
@@ -61,13 +62,14 @@ if (topRight !== undefined && topRight === middleCenter && topRight === bottomLe
     return;
 }
 let boardFull = true;
-for (let i = 0; i<= 8; i++ ) {
-    if (board[i]=== undefined) {
-        boardFull = false;
-    }
+for (let i = 0; i <= 8; i++) {
+  if (board[i] === undefined) {
+    boardFull = false;
+  }
 }
 if (boardFull === true) {
-    alert("cat's game!");
+  alert("CAT, no winner!!");
+}
+<input type="reset" value="Reset">
 }
 
-}
